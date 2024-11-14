@@ -1,24 +1,18 @@
 backend:
   name: git-gateway
-  branch: master
+  branch: main # or the branch where your content is stored
 
-media_folder: "static/images/uploads" # Folder for uploaded images
+media_folder: "static/images/uploads"
 public_folder: "/images/uploads"
 
 collections:
-  - name: "posts"
+  - name: "posts" # The folder where posts are stored
     label: "Posts"
     folder: "content/posts"
     create: true
+    delete: true
     slug: "{{slug}}"
     fields:
-      - {label: "Title", name: "title", widget: "string"}
-      - {label: "Date", name: "date", widget: "datetime"}
-      - {label: "Category", name: "category", widget: "string"}
-      - {label: "Short Description", name: "shortdescription", widget: "text"}
-      - {label: "Long Description", name: "longdescription", widget: "markdown"}
-      - {label: "Cover Image", name: "coverImage", widget: "image"}
-      - {label: "Tags", name: "tags", widget: "list"}
-      - {label: "Author Name", name: "authorname", widget: "string"}
-      - {label: "Author Position", name: "authorposition", widget: "string"}
-      - {label: "Gallery", name: "gallery", widget: "list", field: {label: "Image", name: "image", widget: "image"}}
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Short Description", name: "shortdescription", widget: "text" }
+      - { label: "Body", name: "body", widget: "markdown" }
